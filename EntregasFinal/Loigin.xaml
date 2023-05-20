@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntregasFinal.Loigin">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="LightBlue" Spacing="15">
+                <Label Text="SISTEMA DE ENTREGAS" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
+                <Image Source="logo.jpg" WidthRequest="300"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Usuario:" TextColor="DarkBlue" FontSize="20" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtUsuario" Placeholder="Usuario" Grid.Row="0" Grid.Column="1"/>
+
+                    <Label Text="Contrasena: " FontSize="20" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                    <Entry x:Name="txtContrasena" Placeholder="Contrasena" Grid.Row="1" Grid.Column="1" IsPassword="true"/>
+                </Grid>
+                <Button x:Name="btnIngresar" Text="INGRESAR" Clicked="btnIngresar_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

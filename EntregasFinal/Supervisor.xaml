@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntregasFinal.Supervisor"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="LightBlue" Spacing="15">
+                <Label Text="BIENVENIDO SUPERVISOR" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
+                <Label x:Name="lblNombre" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
