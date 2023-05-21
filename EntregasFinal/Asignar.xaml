@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntregasFinal.Asignar">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="LightBlue" Spacing="15">
+                <Label Text="ASIGNAR" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblNombre" FontSize="21" TextColor="White" BackgroundColor="DarkBlue" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.ColumnSpan="7" Grid.Row="0" Grid.Column="1"/>
+                    <Image Source="usuario.jpg" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" HorizontalOptions="StartAndExpand" WidthRequest="50"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Nombre Producto:" TextColor="DarkBlue" FontSize="18" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtNombre" Placeholder="Ingrese el nombre" Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="Descripcion Producto:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                    <Entry x:Name="txtDescripcion" Placeholder="Ingrese la Descripcion" Grid.Row="1" Grid.Column="1"/>
+                    <Label Text="Categoria Producto:" TextColor="DarkBlue" FontSize="18" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="2" VerticalTextAlignment="Center"/>
+                    <Picker x:Name="pcrCategoria" Title="Categoria" HorizontalTextAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="Repartidor" TextColor="DarkBlue" FontSize="18" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="3" VerticalTextAlignment="Center"/>
+                    <Picker x:Name="pcrRepartidor" Title="Repartidor" HorizontalTextAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions> 
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnAsignar" Clicked="btnAsignar_Clicked" Text="ASIGNAR" Grid.Row="0" Grid.Column="0"/>
+                    <Button x:Name="btnSalir" Clicked="btnSalir_Clicked" Text="SALIR" Grid.Row="0" Grid.Column="1"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntregasFinal.ConsultarSupervisor">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="LightBlue" Spacing="15">
+                <Label Text="CONSULTAR" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblNombre" FontSize="21" TextColor="White" BackgroundColor="DarkBlue" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.ColumnSpan="7" Grid.Row="0" Grid.Column="1"/>
+                    <Image Source="usuario.jpg" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" HorizontalOptions="StartAndExpand" WidthRequest="50"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Escoja Repartidor:" TextColor="DarkBlue" FontSize="18" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Center"/>
+                    <Picker x:Name="pcrRepartidor" Title="Repartidor" Grid.Row="0" Grid.Column="1"/>
+                    <Button x:Name="btnConsultar" Clicked="btnConsultar_Clicked" Text="CONSULTAR" Grid.Row="1" Grid.Column="0" />
+                    <Button x:Name="btnLimpiar" Clicked="btnLimpiar_Clicked" Text="LIMPIAR" Grid.Row="1" Grid.Column="1"/>
+                </Grid>
+                <Button x:Name="btnSalir" Clicked="btnSalir_Clicked" Text="SALIR" HorizontalOptions="Center"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Nombre" HorizontalTextAlignment="Center" FontSize="16" Grid.Row="0" Grid.Column="0" TextColor="DarkBlue" FontAttributes="Bold"/>
+                    <Label Text="Descripcion" HorizontalTextAlignment="Center"  FontSize="16" Grid.Row="0" Grid.Column="1" TextColor="DarkBlue" FontAttributes="Bold"/>
+                    <Label Text="Estado" FontSize="16" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="2" TextColor="DarkBlue" FontAttributes="Bold"/>
+                </Grid>
+
+                <Label Text="------------------------------------------------------------------------" TextColor="DarkBlue" FontAttributes="Bold"/>
+
+                <ListView x:Name="lista">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblCodigo" Text="{Binding nombre}" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                                        <Label x:Name="lblNombre" Text="{Binding descripcion}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                                        <Label x:Name="lblUsuario" Text="{Binding estado}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

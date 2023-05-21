@@ -15,6 +15,22 @@ namespace EntregasFinal
 		public Supervisor (string nombresCompletos)
 		{
 			InitializeComponent ();
+			lblNombre.Text = nombresCompletos;
 		}
-	}
+
+        private void btnAsignar_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Asignar(lblNombre.Text));
+        }
+
+        private void btnConsultar_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ConsultarSupervisor(lblNombre.Text));
+        }
+
+        private void btnSalir_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Loigin());
+        }
+    }
 }

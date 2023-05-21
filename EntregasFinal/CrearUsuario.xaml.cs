@@ -27,7 +27,6 @@ namespace EntregasFinal
         {
             string Url = "http://192.168.27.104/entregas/postuser.php";
             HttpClient cliente = new HttpClient();
-            ObservableCollection<WS.Tipo> post;
             var content = await cliente.GetStringAsync(Url);
             List<WS.Tipo> posts = JsonConvert.DeserializeObject<List<WS.Tipo>>(content);
             pcrTipo.ItemsSource = posts;
