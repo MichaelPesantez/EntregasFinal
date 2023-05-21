@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntregasFinal.CrearUsuario">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout BackgroundColor="LightBlue" Spacing="15">
+            <Label Text="CREAR USUARIO" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblNombre" FontSize="21" TextColor="White" BackgroundColor="DarkBlue" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.ColumnSpan="7" Grid.Row="0" Grid.Column="1"/>
+                    <Image Source="usuario.jpg" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" HorizontalOptions="StartAndExpand" WidthRequest="50"/>
+                </Grid>
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                    <Label Text="Nombre:" TextColor="DarkBlue" FontSize="20" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtNombre" Placeholder="Ingrese el nombre" Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="Apellido:" FontSize="20" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                    <Entry x:Name="txtApellido" Placeholder="Ingrese el Apellido" Grid.Row="1" Grid.Column="1"/>
+                    <Label Text="Edad:" FontSize="20" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+                    <Entry x:Name="txtEdad" Placeholder="Ingrese la Edad" Keyboard="Numeric" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="Cedula:" FontSize="20" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+                    <Entry x:Name="txtCedula" Placeholder="Ingrese la Cedula" Keyboard="Numeric" Grid.Row="3" Grid.Column="1"/>
+                    <Label Text="Usuario:" FontSize="20" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="4"/>
+                    <Entry x:Name="txtUsuario" Placeholder="Ingrese el Usuario:" Grid.Row="4" Grid.Column="1"/>
+                    <Label Text="Contrasena:" FontSize="20" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="5"/>
+                    <Entry x:Name="txtContrasena" Placeholder="Ingrese la contrasena:" Grid.Row="5" Grid.Column="1"/>
+                    <Label Text="Tipo de Usuario:" FontSize="20" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="6"/>
+                    <Picker x:Name="pcrTipo" Grid.Row="6" Title="Elegir Tipo" HorizontalTextAlignment="Center" Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnRegistrar" Text="GUARDAR" Grid.Row="0" Grid.Column="0" Clicked="btnRegistrar_Clicked" />
+                    <Button x:Name="btnSalir" Text="SALIR" Grid.Row="0" Grid.Column="1" Clicked="btnSalir_Clicked"/>
+
+                </Grid>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

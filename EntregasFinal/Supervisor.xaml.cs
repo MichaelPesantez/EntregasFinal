@@ -12,7 +12,7 @@ namespace EntregasFinal
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Supervisor : ContentPage
 	{
-		public Supervisor (int id,string nombre,string apellido,string cedula,int edad,int tipo)
+		public Supervisor (string nombresCompletos)
 		{
 			InitializeComponent ();
 		}

@@ -12,7 +12,7 @@ namespace EntregasFinal
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Repartidor : ContentPage
 	{
-		public Repartidor (int id,string nombre,string apellido,string cedula,int edad,int tipo)
+		public Repartidor (string nombresCompletos)
 		{
 			InitializeComponent ();
 		}

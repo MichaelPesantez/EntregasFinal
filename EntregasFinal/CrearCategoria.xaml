@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EntregasFinal.Administrador"
-             NavigationPage.HasNavigationBar="False">
+             x:Class="EntregasFinal.CrearCategoria">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="LightBlue" Spacing="15">
-                <Label Text="BIENVENIDO ADMINISTRADOR" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
+                <Label Text="CREAR CATEGORIA" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -19,23 +18,30 @@
                     <Image Source="usuario.jpg" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" HorizontalOptions="StartAndExpand" WidthRequest="50"/>
                 </Grid>
                 <Label/>
-                <Label/>
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <ImageButton x:Name="btnNuevoUsuario" Aspect="AspectFit" BackgroundColor="White" WidthRequest="130" Clicked="btnNuevoUsuario_Clicked" Source="unuevo.png" Grid.Row="0" Grid.Column="0"/>
-                    <ImageButton x:Name="btnEditarUsuario" Aspect="AspectFit" BackgroundColor="White" WidthRequest="120" Clicked="btnEditarUsuario_Clicked" Source="ueditar.png" Grid.Row="0" Grid.Column="1"/>
-                    <ImageButton x:Name="btnNuevaCategoria" Aspect="AspectFit" BackgroundColor="White" WidthRequest="120" Clicked="btnNuevaCategoria_Clicked" Source="cnuevo.png" Grid.Row="1" Grid.Column="0"/>
-                    <ImageButton x:Name="btnEditarCategoria" Aspect="AspectFit" BackgroundColor="White" WidthRequest="110" Clicked="btnEditarCategoria_Clicked" Source="ceditar.png" Grid.Row="1" Grid.Column="1"/>
+                    <Label Text="Nombre:" TextColor="DarkBlue" FontSize="20" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtNombre" Placeholder="Ingrese el nombre" Grid.Row="0" Grid.Column="1"/>
                 </Grid>
                 <Label/>
-                <Button x:Name="btnSalir" FontSize="20" Clicked="btnSalir_Clicked" HorizontalOptions="Center" Text="SALIR"/>
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnGurdar" Text="GUARDAR" Clicked="btnGurdar_Clicked" Grid.Row="0" Grid.Column="0"/>
+                    <Button x:Name="btnRegresar" Text="REGRESAR" Clicked="btnRegresar_Clicked" Grid.Row="0" Grid.Column="1"/>
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -19,10 +19,7 @@ namespace EntregasFinal
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Loigin : ContentPage
     {
-        //private const string Url = "http://192.168.27.104/entregas/post.php";
         private readonly HttpClient cliente = new HttpClient();
-        private ObservableCollection<EntregasFinal.WS.Personas> post;
-
         public Loigin()
         {
             InitializeComponent();
@@ -42,33 +39,18 @@ namespace EntregasFinal
                 var posts = JsonConvert.DeserializeObject<WS.Personas>(content);
                 if (posts.tipo == 1) 
                 {
-                    int id = posts.codigo;
-                    string nombre = posts.nombre;
-                    string apellido = posts.apellido;
-                    string cedula = posts.cedula;
-                    int edad = posts.edad;
-                    int tipo = posts.tipo;
-                    await Navigation.PushAsync(new Administrador(id, nombre, apellido, cedula, edad, tipo));
+                    string nombre = posts.nombre+" "+posts.apellido;
+                    await Navigation.PushAsync(new Administrador(nombre));
                 }
                 if (posts.tipo == 2)
                 {
-                    int id = posts.codigo;
-                    string nombre = posts.nombre;
-                    string apellido = posts.apellido;
-                    string cedula = posts.cedula;
-                    int edad = posts.edad;
-                    int tipo = posts.tipo;
-                    await Navigation.PushAsync(new Supervisor(id, nombre, apellido, cedula, edad, tipo));
+                    string nombre = posts.nombre+" "+posts.apellido;
+                    await Navigation.PushAsync(new Supervisor(nombre));
                 }
                 if (posts.tipo == 3)
                 {
-                    int id = posts.codigo;
-                    string nombre = posts.nombre;
-                    string apellido = posts.apellido;
-                    string cedula = posts.cedula;
-                    int edad = posts.edad;
-                    int tipo = posts.tipo;
-                    await Navigation.PushAsync(new Repartidor(id, nombre, apellido, cedula, edad, tipo));
+                    string nombre = posts.nombre+" "+posts.apellido;
+                    await Navigation.PushAsync(new Repartidor(nombre));
                 }
             }
             catch (Exception ex) 

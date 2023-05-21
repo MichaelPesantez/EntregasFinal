@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntregasFinal.EditarUsuario">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="LightBlue" Spacing="15">
+                <Label Text="EDITAR USUARIO" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblNombre" FontSize="21" TextColor="White" BackgroundColor="DarkBlue" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.ColumnSpan="7" Grid.Row="0" Grid.Column="1"/>
+                    <Image Source="usuario.jpg" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" HorizontalOptions="StartAndExpand" WidthRequest="50"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Codigo" HorizontalTextAlignment="Center" FontSize="16" Grid.Row="0" Grid.Column="0"/>
+                    <Label Text="Nombre" HorizontalTextAlignment="Center"  FontSize="16" Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="Apellido" HorizontalTextAlignment="Center" FontSize="16" Grid.Row="0" Grid.Column="2"/>
+                    <Label Text="Usuario" FontSize="16" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="3"/>
+                </Grid>
+
+                <Label Text="--------------------------------------------------------------------------------------------------"/>
+
+                <ListView x:Name="lista" ItemSelected="lista_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label x:Name="lblCodigo" Text="{Binding codigo}" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                                        <Label x:Name="lblNombre" Text="{Binding nombre}" Grid.Row="0" Grid.Column="1"/>
+                                        <Label x:Name="lblApellido" Text="{Binding apellido}" Grid.Row="0" Grid.Column="2"/>
+                                        <Label x:Name="lblUsuario" Text="{Binding usuario}" Grid.Row="0" Grid.Column="3"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

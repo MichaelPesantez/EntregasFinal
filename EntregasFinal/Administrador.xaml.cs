@@ -12,9 +12,35 @@ namespace EntregasFinal
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Administrador : ContentPage
 	{
-		public Administrador (int id,string nombre,string apellido,string cedula,int edad,int tipo)
+		public Administrador (string nombreCompletos)
 		{
 			InitializeComponent ();
+			lblNombre.Text = nombreCompletos;
 		}
-	}
+
+        private void btnNuevoUsuario_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CrearUsuario(lblNombre.Text));
+        }
+
+        private void btnEditarUsuario_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EditarUsuario(lblNombre.Text));
+        }
+
+        private void btnNuevaCategoria_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CrearCategoria(lblNombre.Text));
+        }
+
+        private void btnEditarCategoria_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EditarCategoria(lblNombre.Text));
+        }
+
+        private void btnSalir_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Loigin());
+        }
+    }
 }
