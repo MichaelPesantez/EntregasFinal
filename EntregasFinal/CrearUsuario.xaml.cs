@@ -25,7 +25,7 @@ namespace EntregasFinal
 
         public async void CargarPicker()
         {
-            string Url = "http://192.168.27.104/entregas/postuser.php";
+            string Url = "http://192.168.27.101/entregas/postuser.php";
             HttpClient cliente = new HttpClient();
             var content = await cliente.GetStringAsync(Url);
             List<WS.Tipo> posts = JsonConvert.DeserializeObject<List<WS.Tipo>>(content);
@@ -47,9 +47,15 @@ namespace EntregasFinal
                 parametros.Add("usuario", txtUsuario.Text);
                 parametros.Add("contrasena", txtContrasena.Text);
                 parametros.Add("tipo", ((WS.Tipo)pcrTipo.SelectedItem).codigo.ToString());
-
-                cliente.UploadValues("http://192.168.27.104/entregas/post.php", "POST", parametros);
-                DisplayAlert("ALERTA", "DATO INGRESADO", "Salir");
+                cliente.UploadValues("http://192.168.27.101/entregas/post.php", "POST", parametros);
+                DisplayAlert("ALERTA", "DATO INGRESADO", "Cerrar");
+                txtNombre.Text = "";
+                txtApellido.Text ="";
+                txtCedula.Text = "";
+                txtEdad.Text = "";
+                txtUsuario.Text = "";
+                txtContrasena.Text = "";
+                pcrTipo.SelectedItem = 0;
 
             }
             catch (Exception ex)
@@ -61,7 +67,7 @@ namespace EntregasFinal
 
         private void btnSalir_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Loigin());
+            Navigation.PushAsync(new Administrador(lblNombre.Text));
         }
     }
 }

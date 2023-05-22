@@ -27,7 +27,7 @@ namespace EntregasFinal
                 WebClient cliente = new WebClient();
                 var parametros = new System.Collections.Specialized.NameValueCollection();
                 parametros.Add("nombre", txtNombre.Text);
-                cliente.UploadValues("http://192.168.27.104/entregas/postcategory.php", "POST", parametros);
+                cliente.UploadValues("http://192.168.27.101/entregas/postcategory.php", "POST", parametros);
                 DisplayAlert("ALERTA", "DATO INGRESADO", "Salir");
                 txtNombre.Text = " ";
 

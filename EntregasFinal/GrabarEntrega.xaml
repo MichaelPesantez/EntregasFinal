@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="EntregasFinal.GrabarEntrega">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="LightBlue" Spacing="15">
+                <Label Text="GRABAR ENTREGA" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblNombre" FontSize="21" TextColor="White" BackgroundColor="DarkBlue" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.ColumnSpan="7" Grid.Row="0" Grid.Column="1"/>
+                    <Image Source="usuario.jpg" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" HorizontalOptions="StartAndExpand" WidthRequest="50"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Codigo:" TextColor="DarkBlue" FontSize="18" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtCodigo" IsReadOnly="True" Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="Nombre Producto:" TextColor="DarkBlue" FontSize="18" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="1" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtNombre" IsReadOnly="True" Grid.Row="1" Grid.Column="1"/>
+                    <Label Text="Descripcion Producto:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+                    <Entry x:Name="txtDescripcion" IsReadOnly="True" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="Direccion Entrega:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+                    <Entry x:Name="txtDireccion" IsReadOnly="True" Grid.Row="3" Grid.Column="1"/>
+                    <Label Text="Longitud:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="4" Grid.Column="0"/>
+                    <Entry x:Name="txtLongitud" IsReadOnly="True" IsVisible="false" Grid.Row="4" Grid.Column="1"/>
+                    <Label Text="Latitud:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="0"/>
+                    <Entry x:Name="txtLatitud" IsReadOnly="True" IsVisible="false" Grid.Row="5" Grid.Column="1"/>
+                    <Label Text="Fecha Entrega:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="6" Grid.Column="0"/>
+                    <DatePicker x:Name="dtFecha" MinimumDate="01/01/2018" MaximumDate="12/31/2050" Grid.Row="6" Grid.Column="1"/>
+                    <Label Text="Imagen:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="7" Grid.Column="0"/>
+                    <Button x:Name="imgEntrega" Text="Imagen" Clicked="imgEntrega_Clicked" Grid.Row="7" Grid.Column="1"/>
+                    <Label Text="Categoria:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="8" Grid.Column="0"/>
+                    <Entry x:Name="txtCategoria" IsReadOnly="True" Grid.Row="8" Grid.Column="1"/>
+                </Grid>
+                <Button x:Name="btnCargarMapa" Text="UBICACION" Clicked="btnCargarMapa_Clicked"/>
+                <maps:Map x:Name="mpMaps" HeightRequest="300" WidthRequest="200"/>
+                <Image x:Name="imgFoto" HeightRequest="300"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

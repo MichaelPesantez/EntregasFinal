@@ -37,7 +37,7 @@ namespace EntregasFinal
 
         public async void CargarPicker(int numero)
         {
-            string Url = "http://192.168.27.104/entregas/postuser.php";
+            string Url = "http://192.168.27.101/entregas/postuser.php";
             HttpClient cliente = new HttpClient();
             ObservableCollection<WS.Tipo> post;
             var content = await cliente.GetStringAsync(Url);
@@ -56,7 +56,7 @@ namespace EntregasFinal
                 {
                     WebClient cliente = new WebClient();
                     var parametros = new System.Collections.Specialized.NameValueCollection();
-                    cliente.UploadValues("http://192.168.27.104/entregas/post.php?codigo="+txtCodigo.Text+"&nombre="+txtNombre.Text+
+                    cliente.UploadValues("http://192.168.27.101/entregas/post.php?codigo="+txtCodigo.Text+"&nombre="+txtNombre.Text+
                         "&apellido="+txtApellido.Text+"&edad="+txtEdad.Text+"&cedula="+txtCedula.Text+"&usuario="+txtUsuario.Text+
                         "&contrasena="+txtContrasena.Text+"&tipo="+((WS.Tipo)pcrTipo.SelectedItem).codigo.ToString(), "PUT", parametros);
                     await DisplayAlert("Confirmacion", "Datos Actualizados", "Cerrar");
@@ -78,7 +78,7 @@ namespace EntregasFinal
                 {
                     WebClient cliente = new WebClient();
                     var parametros = new System.Collections.Specialized.NameValueCollection();
-                    cliente.UploadValues("http://192.168.27.104/entregas/post.php?codigo="+txtCodigo.Text, "DELETE", parametros);
+                    cliente.UploadValues("http://192.168.27.101/entregas/post.php?codigo="+txtCodigo.Text, "DELETE", parametros);
                     await DisplayAlert("Confirmacion", "Datos Actualizados", "Cerrar");
                     await Navigation.PushAsync(new Administrador(lblNombre.Text));
                 }

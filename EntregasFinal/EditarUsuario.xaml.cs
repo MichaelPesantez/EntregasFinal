@@ -26,7 +26,7 @@ namespace EntregasFinal
 
         public async void Obtener()
         {
-            string Url = "http://192.168.27.104/entregas/post.php";
+            string Url = "http://192.168.27.101/entregas/post.php";
             HttpClient cliente = new HttpClient();
             ObservableCollection<WS.Personas> post;
             var content = await cliente.GetStringAsync(Url);

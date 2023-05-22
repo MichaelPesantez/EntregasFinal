@@ -24,7 +24,7 @@ namespace EntregasFinal
 
         private async void btnConsultar_Clicked(object sender, EventArgs e)
         {
-            string Url = "http://192.168.27.104/entregas/postproducto.php?persona="+((WS.Personas)pcrRepartidor.SelectedItem).codigo;
+            string Url = "http://192.168.27.101/entregas/postproducto.php?persona="+((WS.Personas)pcrRepartidor.SelectedItem).codigo;
             HttpClient cliente = new HttpClient();
             ObservableCollection<WS.Producto> post;
             var content = await cliente.GetStringAsync(Url);
@@ -34,7 +34,7 @@ namespace EntregasFinal
         }
         public async void CargarRepartidor()
         {
-            string Url = "http://192.168.27.104/entregas/post.php?tipo=2";
+            string Url = "http://192.168.27.101/entregas/post.php?tipo=3";
             HttpClient cliente = new HttpClient();
             var content = await cliente.GetStringAsync(Url);
             List<WS.Personas> posts = JsonConvert.DeserializeObject<List<WS.Personas>>(content);
@@ -44,12 +44,12 @@ namespace EntregasFinal
 
         private void btnLimpiar_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new ConsultarSupervisor(lblNombre.Text));
         }
 
         private void btnSalir_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new Supervisor(lblNombre.Text));
         }
     }
 }

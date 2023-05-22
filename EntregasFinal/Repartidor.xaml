@@ -7,7 +7,23 @@
         <ScrollView>
             <StackLayout BackgroundColor="LightBlue" Spacing="15">
                 <Label Text="BIENVENIDO REPARTIDOR" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
-                <Label x:Name="lblNombre" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblNombre" FontSize="21" TextColor="White" BackgroundColor="DarkBlue" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.ColumnSpan="7" Grid.Row="0" Grid.Column="1"/>
+                    <Image Source="usuario.jpg" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" HorizontalOptions="StartAndExpand" WidthRequest="50"/>
+                </Grid>
+                <Label/>
+                <ImageButton x:Name="btnEntregar" WidthRequest="170" Source="entregar.png" Clicked="btnEntregar_Clicked" HorizontalOptions="Center"/>
+                <Label/>
+                <ImageButton x:Name="btnConsultar" WidthRequest="150" Source="consultarsuper.png" Clicked="btnConsultar_Clicked"  HorizontalOptions="Center"/>
+                <Label/>
+                <Button x:Name="btnSalir" Text="SALIR" Clicked="btnSalir_Clicked" FontSize="18" FontAttributes="Bold"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

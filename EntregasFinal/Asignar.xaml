@@ -23,6 +23,7 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -32,10 +33,12 @@
                     <Entry x:Name="txtNombre" Placeholder="Ingrese el nombre" Grid.Row="0" Grid.Column="1"/>
                     <Label Text="Descripcion Producto:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="1"/>
                     <Entry x:Name="txtDescripcion" Placeholder="Ingrese la Descripcion" Grid.Row="1" Grid.Column="1"/>
-                    <Label Text="Categoria Producto:" TextColor="DarkBlue" FontSize="18" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="2" VerticalTextAlignment="Center"/>
-                    <Picker x:Name="pcrCategoria" Title="Categoria" HorizontalTextAlignment="Center" Grid.Row="2" Grid.Column="1"/>
-                    <Label Text="Repartidor" TextColor="DarkBlue" FontSize="18" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="3" VerticalTextAlignment="Center"/>
-                    <Picker x:Name="pcrRepartidor" Title="Repartidor" HorizontalTextAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+                    <Label Text="Direccion Entrega:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+                    <Entry x:Name="txtDireccion" Placeholder="Ingrese Direccion" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="Categoria Producto:" TextColor="DarkBlue" FontSize="18" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="3" VerticalTextAlignment="Center"/>
+                    <Picker x:Name="pcrCategoria" Title="Categoria" HorizontalTextAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+                    <Label Text="Repartidor" TextColor="DarkBlue" FontSize="18" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="4" VerticalTextAlignment="Center"/>
+                    <Picker x:Name="pcrRepartidor" Title="Repartidor" HorizontalTextAlignment="Center" Grid.Row="4" Grid.Column="1"/>
                 </Grid>
                 <Grid>
                     <Grid.RowDefinitions>

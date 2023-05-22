@@ -34,7 +34,7 @@ namespace EntregasFinal
         {
             try 
             {
-                string Url = "http://192.168.27.104/entregas/post.php?usuario="+txtUsuario.Text+"&contrasena="+txtContrasena.Text;
+                string Url = "http://192.168.27.101/entregas/post.php?usuario="+txtUsuario.Text+"&contrasena="+txtContrasena.Text;
                 var content = await cliente.GetStringAsync(Url);
                 var posts = JsonConvert.DeserializeObject<WS.Personas>(content);
                 if (posts.tipo == 1) 
@@ -50,7 +50,7 @@ namespace EntregasFinal
                 if (posts.tipo == 3)
                 {
                     string nombre = posts.nombre+" "+posts.apellido;
-                    await Navigation.PushAsync(new Repartidor(nombre));
+                    await Navigation.PushAsync(new Repartidor(nombre, posts.codigo));
                 }
             }
             catch (Exception ex) 

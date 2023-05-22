@@ -26,7 +26,7 @@ namespace EntregasFinal
 
         public async void CargarCategoria()
         {
-            string Url = "http://192.168.27.104/entregas/postcategory.php";
+            string Url = "http://192.168.27.101/entregas/postcategory.php";
             HttpClient cliente = new HttpClient();
             var content = await cliente.GetStringAsync(Url);
             List<WS.Categoria> posts = JsonConvert.DeserializeObject<List<WS.Categoria>>(content);
@@ -36,7 +36,7 @@ namespace EntregasFinal
 
         public async void CargarRepartidor()
         {
-            string Url = "http://192.168.27.104/entregas/post.php?tipo=2";
+            string Url = "http://192.168.27.101/entregas/post.php?tipo=3";
             HttpClient cliente = new HttpClient();
             var content = await cliente.GetStringAsync(Url);
             List<WS.Personas> posts = JsonConvert.DeserializeObject<List<WS.Personas>>(content);
@@ -52,6 +52,7 @@ namespace EntregasFinal
                 var parametros = new System.Collections.Specialized.NameValueCollection();
                 parametros.Add("nombre", txtNombre.Text);
                 parametros.Add("descripcion", txtDescripcion.Text);
+                parametros.Add("direccion", txtDireccion.Text);
                 parametros.Add("persona", ((WS.Personas)pcrRepartidor.SelectedItem).codigo.ToString());
                 parametros.Add("categoria", ((WS.Categoria)pcrCategoria.SelectedItem).codigo.ToString());
                 parametros.Add("estado", "2");
@@ -59,12 +60,13 @@ namespace EntregasFinal
                 parametros.Add("Latitud", null);
                 parametros.Add("fecha_entrega", null);
                 parametros.Add("imagen", null);
-                cliente.UploadValues("http://192.168.27.104/entregas/postproducto.php", "POST", parametros);
+                cliente.UploadValues("http://192.168.27.101/entregas/postproducto.php", "POST", parametros);
                 DisplayAlert("ALERTA", "DATO INGRESADO", "Cerrar");
                 txtNombre.Text = "";
                 txtDescripcion.Text ="";
-                pcrCategoria.SelectedIndex = 0;
-                pcrRepartidor.SelectedIndex = 0;
+                txtDireccion.Text = "";
+                pcrCategoria.SelectedItem = 0;
+                pcrRepartidor.SelectedItem = 0;
 
             }
             catch (Exception ex)

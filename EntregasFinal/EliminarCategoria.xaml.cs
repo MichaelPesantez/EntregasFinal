@@ -29,7 +29,7 @@ namespace EntregasFinal
                 {
                     WebClient cliente = new WebClient();
                     var parametros = new System.Collections.Specialized.NameValueCollection();
-                    cliente.UploadValues("http://192.168.27.104/entregas/postcategory.php?codigo="+txtCodigo.Text+"&nombre="+txtNombre.Text, "PUT", parametros);
+                    cliente.UploadValues("http://192.168.27.101/entregas/postcategory.php?codigo="+txtCodigo.Text+"&nombre="+txtNombre.Text, "PUT", parametros);
                     await DisplayAlert("Confirmacion", "Datos Actualizados", "Cerrar");
                     await Navigation.PushAsync(new Administrador(lblNombre.Text));
                 }
@@ -49,7 +49,7 @@ namespace EntregasFinal
                 {
                     WebClient cliente = new WebClient();
                     var parametros = new System.Collections.Specialized.NameValueCollection();
-                    cliente.UploadValues("http://192.168.27.104/entregas/postcategory.php?codigo="+txtCodigo.Text, "DELETE", parametros);
+                    cliente.UploadValues("http://192.168.27.101/entregas/postcategory.php?codigo="+txtCodigo.Text, "DELETE", parametros);
                     await DisplayAlert("Confirmacion", "Datos Actualizados", "Cerrar");
                     await Navigation.PushAsync(new Administrador(lblNombre.Text));
                 }
