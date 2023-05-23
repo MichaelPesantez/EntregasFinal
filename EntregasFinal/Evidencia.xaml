@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntregasFinal.Evidencia">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="LightBlue">
+                <Label Text="EVIDENCIA" FontSize="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="DarkBlue"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblNombre" FontSize="21" TextColor="White" BackgroundColor="DarkBlue" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.ColumnSpan="7" Grid.Row="0" Grid.Column="1"/>
+                    <Image Source="usuario.jpg" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" HorizontalOptions="StartAndExpand" WidthRequest="50"/>
+                </Grid>
+                <Image x:Name="imgEvidencia" WidthRequest="500" HeightRequest="500" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button x:Name="btnSalir" Text="SALIR" Clicked="btnSalir_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

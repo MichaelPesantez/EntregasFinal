@@ -4,7 +4,9 @@ using Plugin.Geolocator;
 using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +23,11 @@ namespace EntregasFinal
         private string codigoPersona;
         private double lati;
         private double lon;
+        public string base64foto;
+       
         public GrabarEntrega (string nombresCompletos, string codigo, string nombre, string descripcion, string direccion, string persona, string categoria)
         {
-            InitializeComponent ();
+            InitializeComponent();
             ObtenerCategoria(categoria);
             localizar();
             lblNombre.Text = nombresCompletos;
@@ -33,6 +37,7 @@ namespace EntregasFinal
             txtDireccion.Text = direccion;
             codigoPersona = persona;
             mpMaps.IsVisible = true;
+
         }
         public async void ObtenerCategoria(string category)
         {
@@ -68,10 +73,16 @@ namespace EntregasFinal
         private async void TomarFoto()
         { 
             var camara = new StoreCameraMediaOptions();
-            camara.PhotoSize = PhotoSize.Medium;
+            camara.PhotoSize = PhotoSize.Small;
+            camara.CompressionQuality = 10;
+            camara.RotateImage = true;
+            camara.SaveToAlbum = true;
             var foto = await Plugin.Media.CrossMedia.Current.TakePhotoAsync(camara);
             ImageSource imageSource = ImageSource.FromStream(foto.GetStream);
             imgFoto.Source = imageSource;
+            Stream stream1 = foto.GetStream();
+            base64foto = await Convertbase64Async(stream1);
+            
         }
         private void imgEntrega_Clicked(object sender, EventArgs e)
         {
@@ -94,9 +105,37 @@ namespace EntregasFinal
             mpMaps.MyLocationEnabled = true;
         }
 
+        public static async Task<string> Convertbase64Async(Stream stream)
+        {
+            var bytes = new byte[stream.Length];
+            await stream.ReadAsync(bytes, 0, (int)stream.Length);
+            string base64 = Convert.ToBase64String(bytes);
+            return base64;
+        }
         private void mpMaps_SelectedPinChanged(object sender, SelectedPinChangedEventArgs e)
         {
             
+        }
+
+        private async void btnGuardarEntrega_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                if (await DisplayAlert("Confirmacion", "Realizar la Entrega?", "SI", "NO"))
+                {
+                    WebClient cliente = new WebClient();
+                    var parametros = new System.Collections.Specialized.NameValueCollection();
+                    cliente.UploadValues("http://192.168.27.101/entregas/postproducto.php?codigo="+txtCodigo.Text+"&Longitud="+txtLongitud.Text+"&Latitud="+txtLatitud.Text+
+                        "&fecha_entrega="+dtFecha.Date.ToString()+"&imagen="+base64foto+"&estado=1","PUT", parametros);
+                    await DisplayAlert("Confirmacion", "Entrega Realizada", "Cerrar");
+                    await Navigation.PushAsync(new Entregar(lblNombre.Text, Convert.ToInt32(codigoPersona)));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("ALERTA", ex.Message, "Cerrar");
+            }
         }
     }
 }

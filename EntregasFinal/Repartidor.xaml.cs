@@ -30,12 +30,12 @@ namespace EntregasFinal
 
         private void btnConsultar_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new ConsultarRepartidor(lblNombre.Text, idRepartidor));
         }
 
         private void btnSalir_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new Loigin());
         }
     }
 }

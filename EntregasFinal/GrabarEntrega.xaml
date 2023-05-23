@@ -48,7 +48,7 @@
                     <Label Text="Latitud:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="0"/>
                     <Entry x:Name="txtLatitud" IsReadOnly="True" IsVisible="false" Grid.Row="5" Grid.Column="1"/>
                     <Label Text="Fecha Entrega:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="6" Grid.Column="0"/>
-                    <DatePicker x:Name="dtFecha" MinimumDate="01/01/2018" MaximumDate="12/31/2050" Grid.Row="6" Grid.Column="1"/>
+                    <DatePicker x:Name="dtFecha" Format="yyyy-MM-dd" MinimumDate="01/01/2018" MaximumDate="12/31/2050" Grid.Row="6" Grid.Column="1"/>
                     <Label Text="Imagen:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="7" Grid.Column="0"/>
                     <Button x:Name="imgEntrega" Text="Imagen" Clicked="imgEntrega_Clicked" Grid.Row="7" Grid.Column="1"/>
                     <Label Text="Categoria:" FontSize="18" TextColor="DarkBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="8" Grid.Column="0"/>
@@ -57,6 +57,7 @@
                 <Button x:Name="btnCargarMapa" Text="UBICACION" Clicked="btnCargarMapa_Clicked"/>
                 <maps:Map x:Name="mpMaps" HeightRequest="300" WidthRequest="200"/>
                 <Image x:Name="imgFoto" HeightRequest="300"/>
+                <Button x:Name="btnGuardarEntrega" Text="ENTREGAR" Clicked="btnGuardarEntrega_Clicked"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
